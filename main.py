@@ -1,6 +1,6 @@
+import time
 from subprocess import *
 import yaml
-# from pywinauto import application
 
 with open(r'vars.yaml') as file:
     variables = yaml.load(file, Loader=yaml.FullLoader)
@@ -13,7 +13,5 @@ Popen(boot_emulator_cmd,creationflags=CREATE_NEW_CONSOLE)
 #Entering PIN and Copying passcode
 token = variables['token']
 get_passcode_cmd = 'python get_passcode.py ' + str(token)
-Popen(get_passcode_cmd,creationflags=CREATE_NEW_CONSOLE)
-
-# app = application.Application()
-# app.start("C:\\Users\\SchezeenFazulbhoy\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\Accessories\\Notepad.exe")
+passcode = check_output(get_passcode_cmd)
+print(str(passcode))
