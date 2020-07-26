@@ -1,0 +1,14 @@
+steps:
+
+Variables:
+1. scrcpy path
+2. Device name
+
+
+On running LIWI:
+1. cd /path/to/scrcpy
+2. if usb connected then ok
+3. start scrcpy.exe
+4. set window title to "adbDevice"
+5. switch window to adbDevice
+6. Navigate to RSA app 
